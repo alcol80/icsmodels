@@ -1,6 +1,6 @@
-### Author: Alessio Coletta <alcol80@gmail.com>
-###
-### Copyright © 2013 Alessio Coletta - All Rights Reserved
+# Author: Alessio Coletta <alcol80@gmail.com>
+#
+# Copyright (C) 2013 Alessio Coletta - All Rights Reserved
 
 from scipy.integrate import odeint
 from numpy import arange
