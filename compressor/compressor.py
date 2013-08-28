@@ -9,7 +9,6 @@ import numpy as np
 
 a = 3
 b = 1
-y0 = [0,0]
 
 def desired(t):
     return 10
@@ -37,7 +36,8 @@ def func(y,t):
 
 t = arange(0, 50.0, 0.05)
 
-y = odeint(func, [0, 0], t)
+y0 = [ipressure(0), 0]
+y = odeint(func, y0, t)
 
 ### Plotting and export to file
 output_file = 'out/fig.pdf'
