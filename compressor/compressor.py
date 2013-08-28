@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 # Author: Alessio Coletta <alcol80@gmail.com>
 #
 # Copyright (C) 2013 Alessio Coletta - All Rights Reserved
