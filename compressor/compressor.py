@@ -35,10 +35,10 @@ t = arange(0, 50.0, 0.05)
 
 y = odeint(func, [0, 0], t)
 
-plt.plot(t,y[:,0], label = \"output pressure\")
-plt.plot(t,[ipressure(s) for s in t], 'r', label = \"input pressure\")
+plt.plot(t,y[:,0], label = "output pressure")
+plt.plot(t,[ipressure(s) for s in t], 'r', label = "input pressure")
 regime = 100
-plt.plot(t[regime], y[regime,0], 'co', label = \"regime\")
+plt.plot(t[regime], y[regime,0], 'co', label = "regime")
 regime = 370
 plt.plot(t[regime], y[regime,0], 'co')
 regime = 690
