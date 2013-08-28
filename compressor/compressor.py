@@ -1,3 +1,7 @@
+### Author: Alessio Coletta <alcol80@gmail.com>
+###
+### Copyright © 2013 Alessio Coletta - All Rights Reserved
+
 from scipy.integrate import odeint
 from numpy import arange
 import matplotlib.pyplot as plt
@@ -35,13 +39,23 @@ t = arange(0, 50.0, 0.05)
 
 y = odeint(func, [0, 0], t)
 
-plt.plot(t,y[:,0], label = "output pressure")
-plt.plot(t,[ipressure(s) for s in t], 'r', label = "input pressure")
+### Plotting and export to file
+output_file = 'out/fig.pdf'
+
+# plot input and output pressure values
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.plot(t,y[:,0], label = "output pressure")
+ax.plot(t,[ipressure(s) for s in t], 'r', label = "input pressure")
+
+# plot light blue dots at the *back to regime* times
 regime = 100
-plt.plot(t[regime], y[regime,0], 'co', label = "regime")
+ax.plot(t[regime], y[regime,0], 'co', label = "regime")
 regime = 370
-plt.plot(t[regime], y[regime,0], 'co')
+ax.plot(t[regime], y[regime,0], 'co')
 regime = 690
-plt.plot(t[regime], y[regime,0], 'co')
-plt.legend(loc=4)
-plt.show()
+ax.plot(t[regime], y[regime,0], 'co')
+
+# export the output
+ax.legend(loc=4)
+fig.savefig(output_file)
